@@ -39,11 +39,20 @@ stages:
 
     - script: |
         echo "🔁 Applying infrastructure with Terragrunt"
-        for dir in container-registry network aks ; do
+
+        MODULES=("container-registry" "network" "aks")
+
+        for dir in "${MODULES[@]}"; do
           echo "🚀 Running Terragrunt in: live/dev/$dir"
-          cd live/dev/$dir
+          pushd live/dev/$dir
+          
+          # Ensure backend config is reinitialized
           terragrunt init -reconfigure
+
+          # Run plan and apply
           terragrunt apply --terragrunt-non-interactive --auto-approve
-          cd -
+
+          popd
         done
       displayName: 'Terragrunt Apply for ACR, AKS'
+
