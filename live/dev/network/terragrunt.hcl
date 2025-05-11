@@ -1,0 +1,12 @@
+include {
+  path = find_in_parent_folders()
+}
+
+terraform {
+  source = "../../terraform-modules/network"
+}
+
+inputs = {
+  location = local.location
+  tags     = local.tags
+}
