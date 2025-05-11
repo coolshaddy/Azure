@@ -37,8 +37,26 @@ stages:
         sudo mv terragrunt_linux_amd64 /usr/local/bin/terragrunt
       displayName: 'Install Terragrunt'
 
+    # Step 1: Bootstrap the infrastructure (Create Storage Account and State Backend)
     - script: |
-        echo "🔁 Applying infrastructure with Terragrunt"
+        echo "🔁 Bootstrapping infrastructure for state backend"
+        cd live/dev/bootstrap
+
+        echo "🔧 Running terragrunt init for backend"
+        terragrunt init -reconfigure
+        if [ $? -ne 0 ]; then
+          echo "❌ terragrunt init failed for bootstrap"
+          exit 1
+        fi
+
+        echo "📦 Running terragrunt apply for bootstrap"
+        terragrunt apply --terragrunt-non-interactive --auto-approve
+        cd -
+      displayName: 'Bootstrap Infrastructure'
+
+    # Step 2: Apply the main infrastructure (Container Registry, Network, AKS)
+    - script: |
+        echo "🔁 Applying main infrastructure with Terragrunt"
         for dir in container-registry network aks ; do
           echo "🚀 Running Terragrunt in: live/dev/$dir"
           cd live/dev/$dir
