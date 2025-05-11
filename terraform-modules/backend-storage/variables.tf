@@ -1,19 +1,19 @@
 variable "resource_group_name" {
-  type        = string
-  description = "Name of the resource group for backend storage."
+  type    = string
+  default = "virt-rg"
 }
 
 variable "storage_account_name" {
-  type        = string
-  description = "Name of the storage account."
+  type    = string
+  default = "akstfstatestorage"
 }
 
 variable "container_name" {
-  type        = string
-  description = "Name of the blob container."
+  type    = string
+  default = "tfstate"
 }
 
 variable "location" {
-  type        = string
-  description = "Azure region."
+  type    = string
+  default = "Central India"
 }
