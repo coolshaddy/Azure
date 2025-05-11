@@ -42,7 +42,6 @@ stages:
         for dir in container-registry network aks ; do
           echo "🚀 Running Terragrunt in: live/dev/$dir"
           cd live/dev/$dir
-          terragrunt init
           terragrunt init -reconfigure
           terragrunt apply --terragrunt-non-interactive --auto-approve
           cd -
