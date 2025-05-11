@@ -14,8 +14,11 @@ inputs = merge(
   local.common_vars,
   {
     cluster_name   = "aks-dev-cluster"
-    resource_group = "rg-aks-dev"
-    location       = "East US"
+    resource_group_name = local.tags.resource_group
+    location       = local.location
+    dns_prefix            = "aks-dev"
+    vm_size               = "Standard_DS2_v2"
+    tags                  = local.tags
     node_count     = 2
   }
 )

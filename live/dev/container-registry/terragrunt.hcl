@@ -9,9 +9,9 @@ include {
 inputs = merge(
   local.common_vars,
   {
-    resource_group = "rg-container-registry-dev"
-    location       = "East US"
+    resource_group_name = local.tags.resource_group
+    location       = local.location
     acr_name       = "mydevacr123"
     sku            = "Standard"
-  }
+  } 
 )

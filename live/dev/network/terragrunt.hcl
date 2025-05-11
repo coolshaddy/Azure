@@ -10,8 +10,8 @@ inputs = merge(
   local.common_vars,
   {
     cluster_name   = "aks-dev-cluster"
-    resource_group = "rg-aks-dev"
-    location       = "East US"
+    resource_group_name = local.tags.resource_group
+    location       = local.location
 
     vnet_name             = "vnet-aks-dev"
     vnet_address_space    = ["10.0.0.0/8"]
