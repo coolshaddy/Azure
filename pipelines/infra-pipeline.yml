@@ -43,6 +43,7 @@ stages:
           echo "🚀 Running Terragrunt in: live/dev/$dir"
           cd live/dev/$dir
           terragrunt init
+          terragrunt init -reconfigure
           terragrunt apply --terragrunt-non-interactive --auto-approve
           cd -
         done
