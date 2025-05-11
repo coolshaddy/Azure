@@ -1,5 +1,5 @@
 terraform {
-  source = "../../terraform-modules/backend-storage"
+  source = "../../../terraform-modules/backend-storage"
 }
 
 inputs = {
