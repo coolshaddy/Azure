@@ -10,7 +10,7 @@ resource "helm_release" "prometheus" {
   namespace  = "monitoring"
   create_namespace = true
   repository = "https://prometheus-community.github.io/helm-charts"
-  version    = "15.0.0"
+  version    = "27.13.0"
   values     = [file("${path.module}/prometheus-values.yaml")]
 }
 
@@ -20,6 +20,6 @@ resource "helm_release" "grafana" {
   namespace  = "monitoring"
   create_namespace = true
   repository = "https://grafana.github.io/helm-charts"
-  version    = "6.7.4"
+  version    = "9.0.0"
   values     = [file("${path.module}/grafana-values.yaml")]
 }
