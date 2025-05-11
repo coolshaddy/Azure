@@ -1,7 +1,19 @@
 locals {
-  location = "eastus"
+  location = "East US"
+
   tags = {
-    environment = "dev"
-    team        = "platform"
+    environment     = "dev"
+    team            = "platform"
+    resource_group  = "rg-aks-dev"
+    vnet_name       = "vnet-aks-dev"
+  }
+
+  common_vars = {
+    subscription_id = get_env("ARM_SUBSCRIPTION_ID")
+    client_id       = get_env("ARM_CLIENT_ID")
+    client_secret   = get_env("ARM_CLIENT_SECRET")
+    tenant_id       = get_env("ARM_TENANT_ID")
+    location        = local.location
+    resource_group  = local.tags.resource_group
   }
 }

@@ -39,7 +39,7 @@ stages:
 
     - script: |
         echo "🔁 Applying infrastructure with Terragrunt"
-        for dir in acr aks monitoring; do
+        for dir in container-registry network aks monitoring; do
           echo "🚀 Running Terragrunt in: live/dev/$dir"
           cd live/dev/$dir
           terragrunt init

@@ -3,16 +3,15 @@ terraform {
 }
 
 include {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("region.hcl")
 }
 
-inputs = {
-  name                = "devacr12345"
-  resource_group_name = "dev-aks-rg"
-  location            = "East US"
-  sku                 = "Standard"
-  admin_enabled       = true
-  tags = {
-    env = "dev"
+inputs = merge(
+  local.common_vars,
+  {
+    resource_group = "rg-container-registry-dev"
+    location       = "East US"
+    acr_name       = "mydevacr123"
+    sku            = "Standard"
   }
-}
+)
