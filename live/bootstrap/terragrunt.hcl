@@ -3,8 +3,8 @@ terraform {
 }
 
 inputs = {
-  resource_group_name   = "sandeep-rg-tfstate-dev-test"
-  storage_account_name  = "mytesttfstatestorage" # must be globally unique
+  resource_group_name   = "sandeep-rg-tfstate-test-test"
+  storage_account_name  = "sandeeptesttfstatestorage" # must be globally unique
   container_name        = "tfstate"
   location              = "centralindia"
 }
