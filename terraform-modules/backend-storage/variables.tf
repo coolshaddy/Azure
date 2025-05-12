@@ -1,6 +1,6 @@
 variable "resource_group_name" {
   type    = string
-  default = "sandeep-rg-tfstate-dev"
+  default = "sandeep-rg-tfstate-dev-test"
 }
 
 variable "storage_account_name" {

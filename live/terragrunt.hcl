@@ -5,7 +5,7 @@ locals {
 remote_state {
   backend = "azurerm"
   config = {
-    resource_group_name  = "sandeep-rg-tfstate-dev"
+    resource_group_name  = "sandeep-rg-tfstate-dev-test"
     storage_account_name = "mytesttfstatestorage"
     container_name       = "tfstate"
     key                  = "${path_relative_to_include()}/terraform.tfstate"

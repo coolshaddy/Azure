@@ -20,7 +20,7 @@ stages:
       inputs:
         connectionType: 'Azure Resource Manager'
         azureSubscriptionEndpoint: '$(azureSubscriptionServiceConnection)'
-        azureResourceGroup: 'dev-sandeep-rg-tfstate-dev'
+        azureResourceGroup: 'dev-sandeep-rg-tfstate-dev-test'
         kubernetesCluster: 'dev-aks'
         command: 'apply'
         useConfigurationFile: true
