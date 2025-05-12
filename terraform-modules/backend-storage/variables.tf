@@ -5,7 +5,7 @@ variable "resource_group_name" {
 
 variable "storage_account_name" {
   type    = string
-  default = "akstfstatestorage"
+  default = "mytesttfstatestorage"
 }
 
 variable "container_name" {
