@@ -1,11 +1,11 @@
 variable "resource_group_name" {
   type    = string
-  default = "sandeep-rg-tfstate-test-test"
+  default = "sandeep-rg--test-dev"
 }
 
 variable "storage_account_name" {
   type    = string
-  default = "sandeeptesttfstatestorage"
+  default = "sandeepdevstorage"
 }
 
 variable "container_name" {
