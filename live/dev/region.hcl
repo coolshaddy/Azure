@@ -3,7 +3,7 @@ locals {
   tags = {
     environment      = "dev"
     team             = "platform"
-    resource_group   = "virt-rg"
+    resource_group   = "aks-rg"
     vnet_name        = "vnet-aks-dev"
   }
   common_vars = {

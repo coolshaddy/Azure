@@ -1,6 +1,6 @@
 variable "resource_group_name" {
   type    = string
-  default = "virt-rg"
+  default = "aks-rg"
 }
 
 variable "storage_account_name" {
