@@ -18,7 +18,7 @@ inputs = merge(
   {
     resource_group_name = local.tags.resource_group
     location            = local.location
-    acr_name            = "mydevacr123"
+    name            = "mydevacr123"
     sku                 = "Standard"
   }
 )
