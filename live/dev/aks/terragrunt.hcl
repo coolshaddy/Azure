@@ -4,6 +4,7 @@ include {
 
 dependency "network" {
   config_path = "../network"
+  skip_outputs = true
 }
 
 terraform {
