@@ -21,6 +21,10 @@ locals {
 inputs = merge(
   local.common_vars,
   {
+    #subscription_id = "your-subscription-id"
+    #client_id       = "your-client-id"
+    #client_secret   = "your-client-secret"
+    #tenant_id       = "your-tenant-id"
     cluster_name        = "aks-dev-cluster"
     resource_group_name = local.tags.resource_group
     location            = local.location
